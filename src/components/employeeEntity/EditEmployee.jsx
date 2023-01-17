@@ -1,6 +1,5 @@
 import { Form, Button, Modal } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import EmployeeService from "../../services/EmployeeService";
 
 function EditEmployee({ active, setActive, employee, editEmployeeHandler }) {
   const editEmployee = { ...employee };
@@ -23,14 +22,6 @@ function EditEmployee({ active, setActive, employee, editEmployeeHandler }) {
   function handleInputChange(e) {
     setData({ ...data, [e.target.name]: e.target.value });
   }
-
-  //   const editEmployeeHandler = async (employee) => {
-  //     await EmployeeService.updateEmployee(employee)
-  //       .then((response) => {
-  //         setActive(false);
-  //       })
-  //       .catch((error) => console.log(error));
-  //   };
 
   return (
     <>
