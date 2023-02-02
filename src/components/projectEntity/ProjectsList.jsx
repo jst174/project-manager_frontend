@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { Container, Button, CardGroup } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import ProjectService from "../../services/ProjectService";
 import ProjectItem from "./ProjectItem";
 
 const ProjectsList = () => {
   const [projects, setProjects] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -23,6 +25,7 @@ const ProjectsList = () => {
         as="input"
         type="submit"
         value="Add new project"
+        onClick={() => navigate("new")}
       />
       <CardGroup>
         {projects.map((project) => {
