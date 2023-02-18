@@ -1,7 +1,13 @@
-import { RiDeleteBin2Line, RiEdit2Line } from "react-icons/ri";
+import {
+  RiAccountBoxFill,
+  RiDeleteBin2Line,
+  RiEdit2Line,
+} from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
 import styles from "./EmployeeItem.module.css";
 
 function EmployeeItem({ employee, deleteEmployee, setActive, editEmployee }) {
+  const navigate = useNavigate();
   return (
     <tr>
       <td>{employee.id}</td>
@@ -12,6 +18,10 @@ function EmployeeItem({ employee, deleteEmployee, setActive, editEmployee }) {
       <td>{employee.email}</td>
       <td>{employee.phone}</td>
       <td>
+        <RiAccountBoxFill
+          className={styles.editIcon}
+          onClick={() => navigate(`${employee.id}`)}
+        />
         <RiEdit2Line
           className={styles.editIcon}
           onClick={() => {
@@ -22,6 +32,7 @@ function EmployeeItem({ employee, deleteEmployee, setActive, editEmployee }) {
         <RiDeleteBin2Line
           onClick={() => deleteEmployee(employee.id)}
           className={styles.deleteIcon}
+          employee={employee}
         />
       </td>
     </tr>

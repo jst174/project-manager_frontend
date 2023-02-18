@@ -1,5 +1,6 @@
 import { Container, Table, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import EmployeeService from "../../services/EmployeeService";
 import EmployeeItem from "./EmployeeItem";
 import NewEmployee from "./NewEmployee";
@@ -21,6 +22,8 @@ function EmpployeeItemList() {
     };
     fetchData();
   }, [employees]);
+
+  const navigate = useNavigate();
 
   const addEmployee = async (employee) => {
     await EmployeeService.addEmployee(employee)

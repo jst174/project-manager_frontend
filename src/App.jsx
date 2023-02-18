@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import EmpployeeItemList from "./components/employeeEntity/EmployeeItemList";
+import EmployeeCard from "./components/employeeEntity/EmployeeCard";
 import ProjectsList from "./components/projectEntity/ProjectsList";
 import ClientList from "./components/clientEntity/ClientList";
 import DepartmentsList from "./components/departmentEntity/DepartmentsList";
@@ -18,6 +19,7 @@ function App() {
             <Route index element={<ProjectsList />} />
             <Route path="new" element={<AddProject />} />
             <Route path="employees" element={<EmpployeeItemList />} />
+            <Route path="employees/:id" element={<EmployeeCard />} />
             <Route path="clients" element={<ClientList />} />
             <Route path="clients/new" element={<AddClient />} />
             <Route path="departments" element={<DepartmentsList />} />
