@@ -20,6 +20,11 @@ const Menu = () => {
               Clients
             </Nav.Link>
           </Nav>
+          <Nav className="me-auto">
+            <Nav.Link as={Link} to="/departments">
+              Departments
+            </Nav.Link>
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>

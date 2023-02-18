@@ -1,9 +1,8 @@
-import React, { Component } from "react";
 import axios from "axios";
 
-class DepartmentService extends Component {
-  BASE_DEPARTMENT_URL = "http://localhost:8080/api/v1/departments";
+const BASE_DEPARTMENT_URL = "http://localhost:8080/api/v1/departments";
 
+class DepartmentService {
   getDepartments() {
     return axios.get(BASE_DEPARTMENT_URL);
   }
@@ -25,4 +24,4 @@ class DepartmentService extends Component {
   }
 }
 
-export default DepartmentService;
+export default new DepartmentService();

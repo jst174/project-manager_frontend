@@ -1,0 +1,22 @@
+.editIcon,
+.deleteIcon {
+  cursor: pointer;
+  color: grey;
+  padding: 0 7px;
+  font-size: 1.8rem;
+  transition: transform 0.3s;
+}
+
+.editIcon:hover,
+.deleteIcon:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+}
+
+.editIcon:hover {
+  color: green;
+}
+
+.deleteIcon:hover {
+  color: red;
+}

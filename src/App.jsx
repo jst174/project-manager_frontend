@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import EmpployeeItemList from "./components/employeeEntity/EmployeeItemList";
 import ProjectsList from "./components/projectEntity/ProjectsList";
 import ClientList from "./components/clientEntity/ClientList";
+import DepartmentsList from "./components/departmentEntity/DepartmentsList";
+import AddDepartment from "./components/departmentEntity/AddDepartment";
 import MainLayout from "./layouts/MainLayout";
 import "./App.css";
 import AddClient from "./components/clientEntity/AddClient";
@@ -18,6 +20,8 @@ function App() {
             <Route path="employees" element={<EmpployeeItemList />} />
             <Route path="clients" element={<ClientList />} />
             <Route path="clients/new" element={<AddClient />} />
+            <Route path="departments" element={<DepartmentsList />} />
+            <Route path="departments/new" element={<AddDepartment />} />
           </Route>
         </Routes>
       </div>
